@@ -95,6 +95,8 @@
       return !!test;
     })(),
 
+    dragDrop: ("draggable" in util.create("span")),
+
     // Test if addEventListener is supported
     addEventListener : !!window.addEventListener,
 
@@ -163,6 +165,9 @@
     canvas : (function(el) {
       return !!(el.getContext && el.getContext("2d"));
     })(util.create("canvas")),
+
+    // Test if Canvas Capture is supported
+    canvasCapture: (CanvasCaptureMediaStreamTrack in window),
 
     // Test if SVG is supported
     svg : !!document.createElementNS && !!document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect,
