@@ -167,7 +167,7 @@
     })(util.create("canvas")),
 
     // Test if Canvas Capture is supported
-    canvasCapture: (window.CanvasCaptureMediaStreamTrack),
+    canvasCapture: !!window.CanvasCaptureMediaStreamTrack || !!window.CanvasCaptureMediaStream,
 
     // Test if SVG is supported
     svg : !!document.createElementNS && !!document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect,
